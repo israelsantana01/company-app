@@ -1,0 +1,32 @@
+<div class="card" style="width: 40rem;">
+  <div class="card-body">
+    <h5 class="card-title">Adicionar Empresa</h5>
+    <div class="card-text">
+      <form [formGroup]="form">
+        <div class="col">
+          <div class="form-row">
+            <div class="col-6">
+              <label for="registeredName">Nome da Empresa</label>
+              <input class="form-control" type="text" id="registeredName" formControlName="registeredName">
+            </div>
+            <div class="col-6">
+              <label for="taxPayerRegistration">CNPJ</label>
+              <input class="form-control" type="text" id="taxPayerRegistration" formControlName="taxPayerRegistration">
+            </div>
+            <div class="col-12">
+              <label for="stateSubscription">Inscrição Estadual</label>
+              <input class="form-control" type="text" id="stateSubscription" formControlName="stateSubscription">
+            </div>
+            <div class="col-12">
+              <label for="tradingName">Nome Fantasia</label>
+              <input class="form-control" type="text" id="tradingName" formControlName="tradingName">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="card-footer">
+
+  </div>
+</div>

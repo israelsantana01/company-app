@@ -3,5 +3,5 @@ export class Company {
   registeredName: string;
   tradingName: string;
   taxPayerRegistration: string;
-  stateRegistration: string;
+  stateSubscription: string;
 }
