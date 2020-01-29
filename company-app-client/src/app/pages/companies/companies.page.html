@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-6 offset-3">
+    <div class="card" style="width: 40rem;">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <div class="card-text">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">CNPJ</th>
+                <th scope="col">Razão Social</th>
+                <th scope="col">Inscrição Estudual</th>
+                <th scope="col">Nome Fantasia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let company of companies">
+                <td>{{ company.id }}</td>
+                <td>{{ company.taxPayerRegistration }}</td>
+                <td>{{ company.registeredName }}</td>
+                <td>{{ company.stateRegistration }}</td>
+                <td>{{ company.tradingName }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
