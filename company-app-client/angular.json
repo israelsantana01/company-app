@@ -28,9 +28,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles/styles.scss"
+              "src/styles/styles.scss",
+              "node_modules/@fortawesome/fontawesome-svg-core/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/booststrap.min.js"
+            ]
           },
           "configurations": {
             "production": {

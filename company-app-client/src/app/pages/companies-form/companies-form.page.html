@@ -1,84 +1,58 @@
-<div class="row">
-  <div class="col-4 offset-2">
-    <div class="card" style="width: 60rem;">
-      <div class="card-body">
-        <h5 class="card-title">Adicionar Empresa</h5>
-        <div class="card-text">
-          <form [formGroup]="form">
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col-6">
-                  <label class="edit-card " for="registeredName"
-                    >Razão Social</label
-                  >
-                  <input
-                    class="form-control edit-card"
-                    type="text"
-                    id="registeredName"
-                    formControlName="registeredName"
-                  />
-                  <small>Invalid Field</small>
-                </div>
-                <div class="col-6">
-                  <label class="edit-card" for="taxPayerRegistration"
-                    >CNPJ</label
-                  >
-                  <input
-                    class="form-control edit-card"
-                    type="text"
-                    id="taxPayerRegistration"
-                    formControlName="taxPayerRegistration"
-                  />
-                  <small>Invalid Field</small>
-                </div>
-              </div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Nova Empresa</h5>
+    <div class="card-text">
+      <form [formGroup]="form">
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-6">
+              <label for="registeredName">Razão Social</label>
+              <input class="form-control" type="text" id="registeredName" formControlName="registeredName" />
+              <small *ngIf="form.get('registeredName').invalid && form.get('registeredName').touched">Invalid
+                Field</small>
             </div>
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col-12">
-                  <label class="edit-card" for="stateSubscription"
-                    >Inscrição Estadual</label
-                  >
-                  <input
-                    class="form-control edit-card"
-                    type="text"
-                    id="stateSubscription"
-                    formControlName="stateSubscription"
-                  />
-                  <small>Invalid Field</small>
-                </div>
-              </div>
+            <div class="col-6">
+              <label for="taxPayerRegistration">CNPJ</label>
+              <input class="form-control" type="text" id="taxPayerRegistration"
+                formControlName="taxPayerRegistration" />
+              <small
+                *ngIf="form.get('taxPayerRegistration').invalid && form.get('taxPayerRegistration').touched">Invalid
+                Field</small>
             </div>
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col-12">
-                  <label class="edit-card" for="tradingName"
-                    >Nome Fantasia</label
-                  >
-                  <input
-                    class="form-control edit-card"
-                    type="text"
-                    id="tradingName"
-                    formControlName="tradingName"
-                  />
-                  <small>Invalid Field</small>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="d-flex flex-row-reverse">
-          <div class="p-2">
-            <button class="btn btn-info">
-              Adicionar <img src="../../../assets/img/add.svg" height="20px">
-            </button>
-          </div>
-          <div class="p-2">
-            <button class="btn btn-danger">
-              Cancel <img src="../../../assets/img/return.svg" height="15px">
-            </button>
           </div>
         </div>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-12">
+              <label class="edit-card" for="stateSubscription">Inscrição Estadual</label>
+              <input class="form-control edit-card" type="text" id="stateSubscription"
+                formControlName="stateSubscription" />
+              <small *ngIf="form.get('stateSubscription').invalid && form.get('stateSubscription').touched">Invalid
+                Field</small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-12">
+              <label class="edit-card" for="tradingName">Nome Fantasia</label>
+              <input class="form-control edit-card" type="text" id="tradingName" formControlName="tradingName" />
+              <small *ngIf="form.get('tradingName').invalid && form.get('tradingName').touched">Invalid Field</small>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="d-flex flex-row-reverse">
+      <div class="p-2">
+        <button (click)="addCompany()" [disabled]="form.invalid" class="btn btn-success">
+          Adicionar <fa-icon [icon]="plus"></fa-icon>
+        </button>
+      </div>
+      <div class="p-2">
+        <button class="btn btn-danger" [routerLink]="['/admin', 'companies']">
+          Cancel <fa-icon [icon]="cancel"></fa-icon>
+        </button>
       </div>
     </div>
   </div>

@@ -1,6 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { CompaniesService } from 'src/app/services/companies.service';
 import { Company } from 'src/app/models/company.model';
+import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
+
+
 
 @Component({
   selector: 'app-companies',
@@ -10,6 +13,9 @@ import { Company } from 'src/app/models/company.model';
 
 // tslint:disable-next-line: component-class-suffix
 export class CompanyPage implements OnInit {
+
+  trash = faTrash;
+  edit = faEdit;
 
   companies: Company[];
 

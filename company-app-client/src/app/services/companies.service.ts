@@ -19,4 +19,8 @@ export class CompaniesService  {
   fetchCompanies(): Observable<Company[]> {
     return this.http.get<Company[]>(this.baseUrl);
   }
+
+  postCompany(value: any): Observable<Company> {
+    return this.http.post<Company>(this.baseUrl, value);
+  }
 }
