@@ -1,32 +1,85 @@
-<div class="card" style="width: 40rem;">
-  <div class="card-body">
-    <h5 class="card-title">Adicionar Empresa</h5>
-    <div class="card-text">
-      <form [formGroup]="form">
-        <div class="col">
-          <div class="form-row">
-            <div class="col-6">
-              <label for="registeredName">Nome da Empresa</label>
-              <input class="form-control" type="text" id="registeredName" formControlName="registeredName">
+<div class="row">
+  <div class="col-4 offset-2">
+    <div class="card" style="width: 60rem;">
+      <div class="card-body">
+        <h5 class="card-title">Adicionar Empresa</h5>
+        <div class="card-text">
+          <form [formGroup]="form">
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col-6">
+                  <label class="edit-card " for="registeredName"
+                    >Razão Social</label
+                  >
+                  <input
+                    class="form-control edit-card"
+                    type="text"
+                    id="registeredName"
+                    formControlName="registeredName"
+                  />
+                  <small>Invalid Field</small>
+                </div>
+                <div class="col-6">
+                  <label class="edit-card" for="taxPayerRegistration"
+                    >CNPJ</label
+                  >
+                  <input
+                    class="form-control edit-card"
+                    type="text"
+                    id="taxPayerRegistration"
+                    formControlName="taxPayerRegistration"
+                  />
+                  <small>Invalid Field</small>
+                </div>
+              </div>
             </div>
-            <div class="col-6">
-              <label for="taxPayerRegistration">CNPJ</label>
-              <input class="form-control" type="text" id="taxPayerRegistration" formControlName="taxPayerRegistration">
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col-12">
+                  <label class="edit-card" for="stateSubscription"
+                    >Inscrição Estadual</label
+                  >
+                  <input
+                    class="form-control edit-card"
+                    type="text"
+                    id="stateSubscription"
+                    formControlName="stateSubscription"
+                  />
+                  <small>Invalid Field</small>
+                </div>
+              </div>
             </div>
-            <div class="col-12">
-              <label for="stateSubscription">Inscrição Estadual</label>
-              <input class="form-control" type="text" id="stateSubscription" formControlName="stateSubscription">
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col-12">
+                  <label class="edit-card" for="tradingName"
+                    >Nome Fantasia</label
+                  >
+                  <input
+                    class="form-control edit-card"
+                    type="text"
+                    id="tradingName"
+                    formControlName="tradingName"
+                  />
+                  <small>Invalid Field</small>
+                </div>
+              </div>
             </div>
-            <div class="col-12">
-              <label for="tradingName">Nome Fantasia</label>
-              <input class="form-control" type="text" id="tradingName" formControlName="tradingName">
-            </div>
+          </form>
+        </div>
+        <div class="d-flex flex-row-reverse">
+          <div class="p-2">
+            <button class="btn btn-info">
+              Adicionar <img src="../../../assets/img/add.svg" height="20px">
+            </button>
+          </div>
+          <div class="p-2">
+            <button class="btn btn-danger">
+              Cancel <img src="../../../assets/img/return.svg" height="15px">
+            </button>
           </div>
         </div>
-      </form>
+      </div>
     </div>
-  </div>
-  <div class="card-footer">
-
   </div>
 </div>
