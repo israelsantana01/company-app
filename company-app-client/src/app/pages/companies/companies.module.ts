@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'new-company',
     loadChildren: '../companies-form/companies-form.module#CompanyFormModule'
+  },
+  {
+    path: ':id',
+    loadChildren: '../companies-form/companies-form.module#CompanyFormModule'
   }
 ];
 

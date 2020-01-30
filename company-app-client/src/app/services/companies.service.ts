@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from "@angular/core";
+import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Company } from '../models/company.model';
@@ -20,7 +20,15 @@ export class CompaniesService  {
     return this.http.get<Company[]>(this.baseUrl);
   }
 
-  postCompany(value: any): Observable<Company> {
-    return this.http.post<Company>(this.baseUrl, value);
+  getComapany(id: number): Observable<Company> {
+    return this.http.get<Company>(`${this.baseUrl}/${id}`);
+  }
+
+  postCompany(company: Company): Observable<Company> {
+    return this.http.post<Company>(this.baseUrl, company);
+  }
+
+  deleteCompany(id: number): Observable<Company> {
+    return this.http.delete<Company>(`${this.baseUrl}/${id}`);
   }
 }

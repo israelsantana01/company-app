@@ -24,12 +24,12 @@
               <td>
                 <div class="d-flex">
                   <div class="p-2 ">
-                    <button class="btn btn-danger">
+                    <button class="btn btn-danger" (click)="deleteCompany(company.id)">
                       <fa-icon [icon]="trash"></fa-icon>
                     </button>
                   </div>
                   <div class="p-2">
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" [routerLink]="['/admin', 'companies', company.id]">
                       <fa-icon [icon]="edit"></fa-icon>
                     </button>
                   </div>

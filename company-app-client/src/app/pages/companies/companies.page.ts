@@ -30,4 +30,10 @@ export class CompanyPage implements OnInit {
       this.companies = comps;
     });
   }
+
+  deleteCompany(id: number) {
+    this.companiesService.deleteCompany(id).subscribe(response => {
+      this.companies = this.companies.filter(company => company.id !== response.id);
+    });
+  }
 }
