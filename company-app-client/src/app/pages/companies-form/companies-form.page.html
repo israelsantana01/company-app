@@ -5,13 +5,13 @@
       <form [formGroup]="form">
         <div class="form-group">
           <div class="form-row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
               <label for="registeredName">Razão Social</label>
               <input class="form-control" type="text" id="registeredName" formControlName="registeredName" />
               <small *ngIf="form.get('registeredName').invalid && form.get('registeredName').touched">Invalid
                 Field</small>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
               <label for="taxPayerRegistration">CNPJ</label>
               <input class="form-control" type="text" id="taxPayerRegistration"
                 formControlName="taxPayerRegistration" />

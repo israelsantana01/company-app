@@ -54,7 +54,7 @@ export class CompanyFormPage implements OnInit {
         // tslint:disable-next-line: max-line-length
         validators: [Validators.required, Validators.minLength(14), Validators.pattern('^(0|[1-9][0-9]*)$')]
       }),
-      stateSubscription: new FormControl( this.company ? this.company.stateSubscription : null , {
+      stateSubscription: new FormControl(this.company ? this.company.stateSubscription : null , {
         updateOn: 'change',
         validators: [Validators.required, Validators.minLength(9), Validators.pattern('^(0|[1-9][0-9]*)$')]
       }),

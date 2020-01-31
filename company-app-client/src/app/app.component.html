@@ -1,35 +1,50 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="d-flex flex-column h-100">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-  <a class="navbar-brand" routerLink="/">
-    <img src="assets/img/urban.svg" height="40px" class="edit-img"> iCompany
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#my-toggle"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <a class="navbar-brand" href="#">
+      <img src="assets/img/company.svg" height="40px" class="edit-img"> iCompany
+    </a>
+    <button *ngIf="authService.authenticated" class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#my-toggle" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="my-toggle">
-    <ul class="navbar-nav ml-auto navbar-right">
-      <li class="nav-item ml-auto">
-        <a class="nav-link text-left" href="#"></a>
-      </li>
-      <li class="nav-item ml-auto">
-        <a class="nav-link text-left nav-edit nav-edit-2" routerLink="/admin/companies/new-company">Adicionar
-          Empresa</a>
-      </li>
-      <li class="nav-item ml-auto">
-        <a class="nav-link nav-edit" href="#">Sair</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+    <div class="collapse navbar-collapse" id="my-toggle">
+      <ul class="navbar-nav ml-auto mr-5 navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-edit nav-edit-2" *ngIf="authService.authenticated"
+            routerLink="/admin/companies/new-company">
+            Adicionar Empresa
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-edit" *ngIf="authService.authenticated" (click)="logout()">
+            Sair
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-<main role="main">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <router-outlet></router-outlet>
+  <main role="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <router-outlet></router-outlet>
+
+        </div>
       </div>
     </div>
-  </div>
-</main>
+  </main>
+
+  <footer class="mt-auto container-fluid">
+      <hr class="featurette-divider">
+      <p>
+        &copy; 2019 Company, Inc. &middot;
+      </p>
+  </footer>
+</div>
